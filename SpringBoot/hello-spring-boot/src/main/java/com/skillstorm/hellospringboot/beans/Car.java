@@ -42,6 +42,7 @@ public class Car implements Vehicle, BeanNameAware, ApplicationContextAware, Ini
     /////// SPRING LIFECYCLE METHODS ////////
     /////////////////////////////////////////
 
+
     /*
      * ApplicationContextAware
      */
