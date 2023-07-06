@@ -66,4 +66,8 @@ public class MovieService {
         return movieRepository.updateMovieTitle(movie.getId(), newTitle);
     }
 
+    public void deleteMovie(Movie movie) {
+        movieRepository.delete(movie);
+    }
+
 }

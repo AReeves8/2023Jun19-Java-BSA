@@ -7,6 +7,8 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +23,7 @@ import com.skillstorm.springaop.models.Movie;
 
 @RestController
 @RequestMapping("/movies")
+@CrossOrigin
 public class MovieController {
     
 
@@ -86,6 +89,13 @@ public class MovieController {
         
         int updated = movieService.updateTitle(movie, newTitle);
         return new ResponseEntity<Integer>(updated, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/movie") 
+    public ResponseEntity<Movie> deleteMovie(@RequestBody Movie movie) {
+        
+        movieService.deleteMovie(movie);
+        return ResponseEntity.noContent().build();
     }
 
 }
