@@ -23,7 +23,7 @@ import com.skillstorm.springaop.models.Movie;
 
 @RestController
 @RequestMapping("/movies")
-@CrossOrigin("http://127.0.0.1:5500/")                    // specifies who is allowed to make requests, it defaults to allowing everyone
+@CrossOrigin("*")                    // specifies who is allowed to make requests, it defaults to allowing everyone
 public class MovieController {
     
 
