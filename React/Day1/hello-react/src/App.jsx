@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Counter from "./components/ItemCounter/Counter";
+import Item from "./components/ItemCounter/Item";
+import RefCounter from "./components/RefCounter/RefCounter";
 
 // components are just functions
 export default function App() {
@@ -17,6 +19,12 @@ export default function App() {
             */}
             {shouldRender ? <Counter /> : null  /** if shouldRender is true, show the component. else, show null */}
             {shouldRender && <Counter /> }
+
+
+            <Item name='Puzzle' desc='1000 pieces'>     {/** name and desc can be accessed in Item by calling props */}
+                <p>Child!</p> 
+                {shouldRender && <RefCounter /> }
+            </Item>
         </>
     );
 }
