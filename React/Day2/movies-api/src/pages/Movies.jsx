@@ -1,7 +1,7 @@
 import { Button, Grid, GridContainer, Modal, ModalHeading, ModalToggleButton } from '@trussworks/react-uswds';
-import MoviesTable from './MoviesTable';
+import MoviesTable from '../components/Movies/MoviesTable';
 import { useEffect, useRef, useState } from 'react';
-import MoviesForm from './MoviesForm';
+import MoviesForm from '../components/Movies/MoviesForm';
 
 export default function Movies() {
 
