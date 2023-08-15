@@ -47,3 +47,8 @@ spring:
                   predicates:
                     - Path=/payments/**                     # this path will map to this specific service
                 
+                - id: rabbitmq-publisher                    # needs to match the spring.application.name in the services
+                  uri: lb://rabbitmq-publisher              # use spring's own load balancer to manage traffic to payments-service
+                  predicates:
+                    - Path=/publisher/**                    # this path will map to this specific service
+                
